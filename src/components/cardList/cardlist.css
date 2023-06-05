@@ -1,0 +1,33 @@
+.cardlist {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  
+  .card-container{
+    background-color:rgb(58, 58, 58);
+    border-radius: 1rem;
+    padding: 1vw;
+    min-width: 20rem;
+    margin: 1rem;
+    align-items: center;
+}
+
+@media (max-width: 700px) {
+    .cardlist {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+      }
+      .card-container{
+        background-color:rgb(58, 58, 58);
+        border-radius: 1rem;
+        padding: 0.5vw;
+        min-width: 14rem;
+        margin: 0.5rem;
+        align-items: center;
+    }
+}

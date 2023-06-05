@@ -15,7 +15,7 @@ class App extends Component {
 
 
   componentDidMount() {
-    fetch('https://demon-slayer-api.onrender.com/v1/')
+    fetch('https://jsonplaceholder.typicode.com/users')
       .then((response) => response.json())
       .then((users) =>
         this.setState(
@@ -50,7 +50,8 @@ class App extends Component {
     return (
       <>
         <div className="App">
-          <SearchBox onChangeHandler={onSearchChange} placeHolder={'Search DEMONS'} className={'searchbox'}/>
+          <h1 className="heading" >MEEEW MEEWW</h1>
+          <SearchBox onChangeHandler={onSearchChange} placeHolder={'Search PussyCat'} className={'searchbox'}/>
           <CardList monsters={filterMonster} />
         </div>
 
