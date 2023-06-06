@@ -1,19 +1,17 @@
 import './cardlist.css'
 import CardComponent from "../cardComponent/cardComponent"
 
-const CardList = (props)=>{
-    
-    const { monsters } = props
+const CardList = ({ monsters }) => {
 
-            return (
-                <div className="cardlist" >
-                    {monsters.map((monster) => {
-                       return <CardComponent monster={monster} key={monster.id} />
-                    })}
-                </div>
-    
-            )
-    
+    return (
+        <div className="cardlist" >
+            {monsters.map((monster) => {
+                return <CardComponent monster={monster} key={monster.id} />
+            })}
+        </div>
+
+    )
+
 }
 export default CardList
 
