@@ -10,19 +10,18 @@ const App = () => {
   const [searchField, setSearchField] = useState('')
   const [monsters, setMonsters] = useState([])
 
-
   
   useEffect(()=>{
+    console.log("useeffect")
     
     fetch('https://jsonplaceholder.typicode.com/users')
       .then((response) => response.json())
       .then((users) => setMonsters(users))
-      
+
   },[])
 
   const extractText = (event) => {
     const searchFieldString = event.target.value.toLocaleLowerCase();
-
     setSearchField(searchFieldString)
   }
 
