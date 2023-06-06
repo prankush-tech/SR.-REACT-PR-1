@@ -5,7 +5,6 @@ class CardComponent extends Component {
     render() {
 
         const { name,id, email} = this.props.monster
-        console.log(this.props.monster)
 
         return (
             <div key={id} className="card-container">
