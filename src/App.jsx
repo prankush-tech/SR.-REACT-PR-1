@@ -5,31 +5,33 @@ import SearchBox from './components/search/searchbox';
 
 const App = () => {
 
-  console.log("render")
-
   const [searchField, setSearchField] = useState('')
   const [monsters, setMonsters] = useState([])
-
+  const [filterMonster, setFilterMonster] = useState(monsters)
   
   useEffect(()=>{
-    console.log("useeffect")
     
     fetch('https://jsonplaceholder.typicode.com/users')
-      .then((response) => response.json())
-      .then((users) => setMonsters(users))
-
+    .then((response) => response.json())
+    .then((users) => setMonsters(users))
+    
   },[])
+  
+  useEffect(()=>{
+    const newFilteredMonster = monsters.filter(
+      (monster) => {
+        return monster.name.toLocaleLowerCase().includes(searchField)
+      });
+      
+      setFilterMonster(newFilteredMonster)  
+
+  },[monsters,searchField])
+
 
   const extractText = (event) => {
     const searchFieldString = event.target.value.toLocaleLowerCase();
     setSearchField(searchFieldString)
   }
-
-  const filterMonster = monsters.filter(
-    (monster) => {
-      return monster.name.toLocaleLowerCase().includes(searchField)
-    })
-
 
   return (
     <>
